@@ -1,0 +1,23 @@
+[
+  {
+    "id": "DES001",
+    "titulo": "Semana Zero Delivery",
+    "categoria": "alimentacao",
+    "economia_estimada_semanal": 120.00,
+    "descricao": "Substituir refeições de aplicativos por jantares cozinhados em casa."
+  },
+  {
+    "id": "DES002",
+    "titulo": "Corte de Streaming Fantasma",
+    "categoria": "lazer",
+    "economia_estimada_mensal": 55.90,
+    "descricao": "Suspender temporariamente assinaturas de vídeo ou música que não sejam vitais este mês."
+  },
+  {
+    "id": "DES003",
+    "titulo": "Fim de Semana Offline de Compras",
+    "categoria": "lazer",
+    "economia_estimada_semanal": 100.00,
+    "descricao": "Fazer apenas passeios gratuitos e evitar abrir aplicativos de e-commerce no sábado e domingo."
+  }
+]
