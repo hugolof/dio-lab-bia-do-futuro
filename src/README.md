@@ -1,31 +1,35 @@
-# Código da Aplicação
+# Como Executar o PoupaSonho no Colab Google
 
-Esta pasta contém o código do seu agente financeiro.
+Para replicar o ambiente e rodar o assistente, siga a sequência de execução das células no seu Google Colab:
 
-## Estrutura Sugerida
+## 1. Configuração do Ambiente
 
-```
-src/
-├── app.py              # Aplicação principal (Streamlit/Gradio)
-├── agente.py           # Lógica do agente
-├── config.py           # Configurações (API keys, etc.)
-└── requirements.txt    # Dependências
-```
+    Atenção: Antes de rodar qualquer célula, vá em Ambiente de execução > Alterar tipo de ambiente de execução e selecione T4 GPU. Sem isso, o modelo não carregará corretamente.
 
-## Exemplo de requirements.txt
+## 2. Fluxo de Execução
 
-```
-streamlit
-openai
-python-dotenv
-```
+Siga a ordem lógica das células no notebook:
 
-## Como Rodar
+    Instalação & Ollama: Executa a instalação de dependências e baixa o modelo gemma4.
 
-```bash
-# Instalar dependências
-pip install -r requirements.txt
+    Geração de Dados: Cria a estrutura de pastas /data e gera os arquivos JSON e CSV (Perfil, Transações, Desafios e Histórico).
 
-# Rodar a aplicação
-streamlit run app.py
-```
+    Setup do App: Cria o arquivo app.py com a lógica do Streamlit e o System Prompt.
+
+    Execução do Servidor: Inicia o Streamlit e gera o link do localtunnel.
+
+## 3. Acesso à Interface
+
+Após rodar a última célula:
+
+    O sistema imprimirá um endereço IP no console. Copie esse número.
+
+    Clique no link gerado pelo localtunnel (ex: [https://xxxx.loca.lt](https://xxxx.loca.lt)).
+
+    Uma página de segurança será aberta. Cole o IP copiado no campo "Endpoint IP" e clique em Submit.
+
+    O PoupaSonho estará pronto para uso na sua aba.
+
+## Evidência de Execução
+
+<img width="1260" height="1734" alt="image" src="https://github.com/user-attachments/assets/9881e419-c998-419b-b147-67c9b597afde" />
