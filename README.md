@@ -55,7 +55,7 @@ flowchart TD
 │   └── 05-pitch.md                # Apresentação do projeto
 │
 └── src/
-    └── PoupaSonho.ipynb                     # Solução notebook + streamlit + localtunnel
+    └── PoupaSonho.ipynb           # Solução notebook + streamlit + localtunnel
 ```
 
 ## Como Executar (Google Colab)
