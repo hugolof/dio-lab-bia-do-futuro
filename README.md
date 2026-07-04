@@ -1,149 +1,111 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# PoupaSonho - O Seu Assistente de Metas Financeiras
 
-## Contexto
+> Agente de Inteligência Artificial autônomo e 100% local, desenvolvido para analisar suas finanças e ajudar você a alcançar seus maiores objetivos financeiros com total privacidade.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+## O Que é o PoupaSonho?
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+O PoupaSonho é um assistente financeiro inteligente focado em **transformar dados em conquistas**. Ele entende que poupar por poupar é difícil, por isso, ele cruza a sua realidade financeira atual (seus gastos) com os seus **objetivos financeiros** (comprar um carro, fazer uma viagem, montar reserva de emergência), traçando o melhor caminho para você chegar lá. Tudo isso com foco absoluto em **soberania de dados** (processamento 100% local).
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+**O que o PoupaSonho faz:**
 
----
+- ✅ Ajuda a traçar e acompanhar planos para **objetivos financeiros**.
+- ✅ Analisa o histórico do arquivo `transacoes.csv` localmente para encontrar oportunidades de economia.
+- ✅ Adapta conselhos ao perfil cadastrado (ex: Conservador), priorizando a segurança do seu dinheiro.
+- ✅ Mantém o contexto da conversa, lembrando das suas metas ao longo do chat.
 
-## O Que Você Deve Entregar
+**O que o PoupaSonho NÃO faz:**
 
-### 1. Documentação do Agente
+- ❌ Não envia seus dados financeiros e sonhos para servidores na nuvem.
+- ❌ Não faz recomendações de alto risco que fujam do seu perfil de investidor.
+- ❌ Não tenta prever o mercado de ações (foco em organização, não em especulação).
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## Arquitetura
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+```mermaid
+flowchart TD
+    A[Usuário com um Objetivo] --> B[Interface / Google Colab]
+    B --> C[Ollama - Servidor Local]
+    C --> D[Modelo Gemma 4 via GPU T4]
+    D --> E[Base de Dados: transacoes.csv & Perfil]
+    E --> D
+    D --> F[Plano de Ação e Resposta Segura]
 ```
 
----
+**Stack:**
 
-## Dicas Finais
+- **Ambiente:** Google Colab (Aceleração por GPU T4) / Ambiente Local
+- **LLM Engine:** Ollama
+- **Modelo:** gemma4 (Google Open Model)
+- **Manipulação de Dados:** Python e Pandas
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+## Estrutura do Projeto
+
+```
+├── data/                          # Base de conhecimento
+│   ├── perfil_investidor.json     # Perfil do cliente
+│   ├── transacoes.csv             # Histórico financeiro
+│   ├── historico_atendimento.csv  # Interações anteriores
+│   └── produtos_financeiros.json  # Produtos para ensino
+│
+├── docs/                          # Documentação completa
+│   ├── 01-documentacao-agente.md  # Caso de uso e persona
+│   ├── 02-base-conhecimento.md    # Estratégia de dados
+│   ├── 03-prompts.md              # System prompt e exemplos
+│   ├── 04-metricas.md             # Avaliação de qualidade
+│   └── 05-pitch.md                # Apresentação do projeto
+│
+└── src/
+    └── PoupaSonho.ipynb                     # Solução notebook + streamlit + localtunnel
+```
+
+## Como Executar (Google Colab)
+
+### 1. Configurar Hardware
+
+Antes de rodar o código, garanta que o Colab está usando aceleração:
+
+> Ambiente de execução > Alterar o tipo de ambiente de execução > Selecionar GPU T4
+
+### 2. Instalar Dependências (Ollama + Gemma 4)
+
+No notebook, execute a célula com os comandos de inicialização:
+
+```bash
+# Atualizar sistema e instalar dependências
+!update && apt install zstd
+!curl -fsSL https://ollama.com/install.sh | sh
+
+# Baixar o modelo gemma4 (pode levar alguns minutos)
+!ollama pull gemma4
+```
+
+### 3. Inicializar o Agente
+
+Rode a célula Python que inicia o servidor do Ollama em background e carrega as ferramentas de leitura do seu histórico financeiro.
+
+## Exemplos de Uso (Foco em Objetivos)
+
+**Pergunta (Definindo a Meta):** "Quero juntar R$ 5.000 para uma viagem no fim do ano. Onde eu posso cortar gastos com base no meu histórico?"
+
+**PoupaSonho:** "Que ótimo objetivo! Analisando seu transacoes.csv, notei que sua maior despesa variável este mês foi com Delivery (R$ 450,00). Se reduzirmos isso pela metade, você já poupa R$ 225 por mês. Vamos traçar um plano usando cortes em gastos não essenciais?"
+
+**Pergunta (Retenção de Contexto):** "E se eu cortar isso, em quanto tempo consigo os R$ 5.000?"
+
+**PoupaSonho:** "Considerando a economia de R$ 225 do Delivery que conversamos, mais os R$ 300 que já sobram do seu orçamento atual, você teria R$ 525 mensais. Nesse ritmo, você alcançará sua viagem de R$ 5.000 em aproximadamente 10 meses! Como seu perfil é conservador, sugiro deixar esse dinheiro rendendo no Tesouro Selic enquanto o dia da viagem não chega."
+
+## Métricas de Avaliação
+
+O PoupaSonho é testado rigorosamente com base em 4 pilares:
+
+| Métrica | O que avalia | Objetivo no PoupaSonho |
+|---|---|---|
+| Assertividade | Leitura de Dados | Garantir que as contas para atingir as metas batam com os valores reais do CSV. |
+| Segurança | Anti-Alucinação | Evitar que o agente invente rendimentos milagrosos para acelerar o objetivo. |
+| Coerência | Respeito ao Perfil | Garantir que o plano de ação seja viável para a realidade (e perfil de risco) do usuário. |
+| Retenção de Contexto | Memória Contínua | Lembrar qual é o "sonho" (objetivo) do usuário ao longo das várias interações. |
+
+## Diferenciais do Projeto
+
+- **Orientado a Sonhos:** Em vez de apenas mostrar gráficos frios de despesas, o foco é construir um caminho prático para metas reais.
+- **Privacidade Absoluta:** Ideal para rodar dados financeiros sensíveis, pois todo o processamento com o gemma4 ocorre na própria máquina/sessão, sem envio para terceiros.
+- **Eficiência de Hardware:** Otimizado para funcionar rapidamente na GPU T4 gratuita do Google Colab.
