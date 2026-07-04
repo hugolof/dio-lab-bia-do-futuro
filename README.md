@@ -45,6 +45,7 @@ flowchart TD
 │   ├── perfil_investidor.json     # Perfil do cliente
 │   ├── transacoes.csv             # Histórico financeiro
 │   ├── historico_atendimento.csv  # Interações anteriores
+|   ├── desafios_economia.json     # Desafios para sugestão
 │   └── produtos_financeiros.json  # Produtos para ensino
 │
 ├── docs/                          # Documentação completa
